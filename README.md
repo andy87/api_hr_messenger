@@ -10,22 +10,23 @@ https://miro.com/app/board/uXjVKHFfUB0=/
  - Servcie: Фасад для класса API
    
 ### Использование Api
+Методы Api возвращают массив с данными.
 ```php
-use and_y87/api_hr_messenger/ApiHrMessenger;
-use and_y87/api_hr_messenger/dto/HrMessengerApiRequisites;
-use and_y87/api_hr_messenger/tools/CacheProvider;
+use and_y87\api_hr_messenger\ApiHrMessenger;
+use and_y87\api_hr_messenger\dto\HrMessengerApiRequisites;
+use and_y87\api_hr_messenger\cache\CacheProvider;
 
 // Add `CacheProvider`
 class RedisCacheProvider extends CacheProvider
 {
-    public function getValue(string $key )
+    public function getValue( string $key ): string
     {
-        Yii::$app->redis->get( $key );
+        return (string) Yii::$app->redis->get( $key );
     }
 
-    public function setValue( string $key, string $value )
+    public function setValue( string $key, mixed $value ): bool
     {
-        Yii::$app->redis->set( $key, value );
+        return Yii::$app->redis->set( $key, $value );
     }
 }
 
@@ -39,6 +40,20 @@ $hrMessengerApiRequisites = new HrMessengerApiRequisites( $client_id, $client_se
 $apiHrMessenger = ApiHrMessenger( $hrMessengerApiRequisites, $redisCacheProvider );
 
 // Use `Api`
+$data = $apiHrMessenger->me();
+```
+### Использование Service
+Методы Service возвращают Объекты с данными.
+```
+use and_y87\api_hr_messenger\service\HrMessengerService;
+
+//Вводная часть при использовании сервиса аналогична Api
+
+// Create object `Service`
+$hrMessengerService = new HrMessengerService($apiHrMessenger);
+
+// Use `Service`
+$me = $hrMessengerService->me(); // return and_y87\api_hr_messenger\response\Me();
 ```
 
 ### Исходная документация API `hrmessenger`: 
