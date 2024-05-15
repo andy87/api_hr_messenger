@@ -40,7 +40,7 @@ $hrMessengerApiRequisites = new HrMessengerApiRequisites( $client_id, $client_se
 $apiHrMessenger = ApiHrMessenger( $hrMessengerApiRequisites, $redisCacheProvider );
 
 // Use `Api`
-$data = $apiHrMessenger->me();
+$data = $apiHrMessenger->me(); // return array
 ```
 ### Использование Service
 Методы Service возвращают Объекты с данными.
