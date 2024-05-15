@@ -2,7 +2,7 @@
 
 ## IN PROGRESS
 
-PHP Фасад для API HrMessenger (hrmessenger.com)
+PHP Фасад для API HrMessenger (www.hrmessenger.com)
 
 #### Реализация
  - API: реализация запросов к api сервису `HrMessenger`
