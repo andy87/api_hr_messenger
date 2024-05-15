@@ -44,7 +44,7 @@ $data = $apiHrMessenger->me(); // return array
 ```
 ### Использование Service
 Методы Service возвращают Объекты с данными.
-```
+```php
 use and_y87\api_hr_messenger\service\HrMessengerService;
 
 //Вводная часть при использовании сервиса аналогична Api
