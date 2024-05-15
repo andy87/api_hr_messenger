@@ -1,9 +1,8 @@
 # api hrm messenger
 
-PHP Фасад для API HrMessenger (hrmessenger.com)
+## IN PROGRESS
 
-#### Схема работы API
-https://miro.com/app/board/uXjVKHFfUB0=/
+PHP Фасад для API HrMessenger (hrmessenger.com)
 
 #### Реализация
  - API: реализация запросов к api сервису `HrMessenger`
@@ -55,6 +54,9 @@ $hrMessengerService = new HrMessengerService($apiHrMessenger);
 // Use `Service`
 $me = $hrMessengerService->me(); // return and_y87\api_hr_messenger\response\Me();
 ```
+
+#### Схема работы API
+![Схема работы API](https://static.andy87.ru/github/api/apiLogivSchema.png)
 
 ### Исходная документация API `hrmessenger`: 
  - https://api.hrmessenger.com
