@@ -6,7 +6,7 @@ PHP Фасад для API HrMessenger (hrmessenger.com)
 https://miro.com/app/board/uXjVKHFfUB0=/
 
 #### Реализация
- - API: реализация запросов к api сервису `Head Hunter`
+ - API: реализация запросов к api сервису `HrMessenger`
  - Servcie: Фасад для класса API
    
 ### Использование Api
