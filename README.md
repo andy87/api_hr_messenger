@@ -15,7 +15,7 @@ use and_y87\api_hr_messenger\ApiHrMessenger;
 use and_y87\api_hr_messenger\dto\HrMessengerApiRequisites;
 use and_y87\api_hr_messenger\cache\CacheProvider;
 
-// Add `CacheProvider`
+// Создание класса `RedisCacheProvider`
 class RedisCacheProvider extends CacheProvider
 {
     public function getValue( string $key ): string
@@ -29,34 +29,39 @@ class RedisCacheProvider extends CacheProvider
     }
 }
 
-// Create object `CacheProvider`
+// Создание экземпляра класса `CacheProvider`
 $redisCacheProvider = new RedisCacheProvider();
 
-// Create object `Requisites`
+// Создание экземпляра класса `Requisites`
 $hrMessengerApiRequisites = new HrMessengerApiRequisites( $client_id, $client_secret );
 
-// Create object `Api`
+// Создание экземпляра класса `Api`
 $apiHrMessenger = ApiHrMessenger( $hrMessengerApiRequisites, $redisCacheProvider );
 
-// Use `Api`
-$data = $apiHrMessenger->me(); // return array
+// Использование `Api`
+$me = $apiHrMessenger->me(); // return array
+
+echo $me['name']; // получение значения массива по ключу (hardcode)
 ```
+
 ### Использование Service
-Методы Service возвращают Объекты с данными.
+Методы Service возвращают объекты(экзмпляры классов) содержащие актуальные для endpoint свойства, согласно документации сервиса.
 ```php
 use and_y87\api_hr_messenger\service\HrMessengerService;
 
 //Вводная часть при использовании сервиса аналогична Api
 
-// Create object `Service`
+// Создание экземпляра класса `Service`
 $hrMessengerService = new HrMessengerService($apiHrMessenger);
 
-// Use `Service`
-$me = $hrMessengerService->me(); // return and_y87\api_hr_messenger\response\Me();
+// Использование `Service`
+$me = $hrMessengerService->myInfo(); // return and_y87\api_hr_messenger\response\Me();
+
+echo $me->name; // Получение значение из объекта через обращение к свойству
 ```
 
 #### Схема работы API
-![Схема работы API](https://static.andy87.ru/github/api/apiLogivSchema.png)
+![Схема работы API](https://static.andy87.ru/github/api/apiLogivSchema.png?v=2)
 
 ### Исходная документация API `hrmessenger`: 
  - https://api.hrmessenger.com
