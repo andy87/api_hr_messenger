@@ -1,8 +1,8 @@
 # api hrm messenger
 
-## IN PROGRESS
-
 PHP Фасад для API HrMessenger (www.hrmessenger.com)
+
+![IN PROGRESS](http://www.bc-energy.it/wp-content/uploads/2013/08/work-in-progress.png)
 
 #### Реализация
  - API: реализация запросов к api сервису `HrMessenger`
