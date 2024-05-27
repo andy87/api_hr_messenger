@@ -10,6 +10,9 @@ PHP Фасад для API HrMessenger (www.hrmessenger.com)
 ---
 
 #### Реализация
+Пакет реализует запросы к API HrMessenger через репозиторий [KnockKnock](https://github.com/andy87/KnockKnock)  
+<p align="center"><a href="https://github.com/andy87/KnockKnock"><img src="https://github.com/andy87/KnockKnock/blob/master/assets/logo/KnockKnockLogo_256.png?raw=true" width=256></a></p>
+
  - API: реализация запросов к api сервису `HrMessenger`
  - Servcie: Фасад для класса API
    
