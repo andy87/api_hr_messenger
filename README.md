@@ -1,4 +1,4 @@
-# api hrm messenger
+# providerHrmMessenger
 
 PHP Фасад для API HrMessenger (www.hrmessenger.com)
 
