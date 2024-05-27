@@ -19,9 +19,9 @@ PHP Фасад для API HrMessenger (www.hrmessenger.com)
 ### Использование Api
 Методы Api возвращают массив с данными.
 ```php
-use and_y87\api_hr_messenger\ApiHrMessenger;
-use and_y87\api_hr_messenger\dto\HrMessengerApiRequisites;
-use and_y87\api_hr_messenger\cache\CacheProvider;
+use and_y87\provider_hr_messenger\ApiHrMessenger;
+use and_y87\aprovider_hr_messenger\dto\HrMessengerApiRequisites;
+use and_y87\provider_hr_messenger\cache\CacheProvider;
 
 // Создание класса `RedisCacheProvider`
 class RedisCacheProvider extends CacheProvider
